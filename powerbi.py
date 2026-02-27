@@ -1,26 +1,29 @@
 import time
 from pywinauto.application import Application
 
-# 1. Start Power BI Desktop with your specific report
-report_path = r"C:\Path\To\Your\Report.pbix"
-app = Application(backend="uia").start(f'pbidesktop.exe "{report_path}"')
+report_path = r"C:\Users\briad\OneDrive - Momentum Credit\Documents\Cyber Shujaa Data and AI\Assignments\powerbiassignment.pbix"
+pdf_output = r"C:\Users\briad\OneDrive - Momentum Credit\Documents\Cyber Shujaa Data and AI\Assignments\powerbiassignment.pdf"
 
-# 2. Connect to the window (wait for it to load)
-# The title typically includes the filename
+# Start Power BI
+app = Application(backend="uia").start(f'"C:\\Program Files\\Microsoft Power BI Desktop\\bin\\PBIDesktop.exe" "{report_path}"')
+
+# Wait for main window
 win = app.window(title_re=".*Power BI Desktop")
-win.wait("visible", timeout=60)
-time.sleep(10)  # Extra buffer for visuals to render
+win.wait("visible", timeout=120)
+time.sleep(15)  # wait for visuals to fully render
 
-# 3. Use keyboard shortcuts to navigate the menu
-# Alt+F (File) -> E (Export) -> P (To PDF)
-win.type_keys("%fep")
+# Open Export to PDF
+win.type_keys("%f")      # Alt + F
+time.sleep(1)
+win.type_keys("e")       # Export
+time.sleep(1)
+win.type_keys("p")       # Export to PDF
+time.sleep(5)
 
-# 4. Handle the export progress and 'Save As' window if it appears
-# Note: Newer versions often save to the same folder automatically or open a dialog.
-# If a dialog opens:
-try:
-    save_as = app.window(title="Save As")
-    save_as.wait("visible", timeout=30)
-    save_as.type_keys(r"C:\Path\To\Output\Report.pdf{ENTER}")
-except Exception:
-    print("No 'Save As' dialog appeared; check default export location.")
+# Handle Save As dialog
+save_as = app.window(title_re="Save As")
+save_as.wait("visible", timeout=60)
+save_as.type_keys(pdf_output)
+save_as.type_keys("{ENTER}")
+
+print("PDF Export Triggered Successfully")
