@@ -40,26 +40,7 @@ Step 2: Publish to Power BI Service
 4. Once finished, click the link to open the report in the Power BI Service (web version).
 
 
-Step 3: Manual Export (One-time)
-
-
-If you only need to send the report once:
-
-
-1. Open the report in the Power BI Service.
-
-2. In the top menu bar, click Export.
-
-3. Choose either PowerPoint or PDF.
-	- Current Values: Exports the report with your current filters applied.
-
-	- Default Values: Exports the report as it was originally published.
-
-
-4. Wait for the export to process and download the file to your machine.
-
-
-Step 5: Advanced Automation (Power Automate)
+Step 3: Advanced Automation (Power Automate)
 
 
 To save the PDF to a folder (SharePoint/OneDrive) or send it via Teams, use a Power Automate flow:
