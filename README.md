@@ -59,29 +59,6 @@ If you only need to send the report once:
 4. Wait for the export to process and download the file to your machine.
 
 
----
-
-Step 4: Automate Export via Email (Subscriptions)
-
-
-To send the report as a PDF/PPT on a recurring schedule:
-
-
-1. In the Power BI Service, click the Subscribe to report icon in the top toolbar.
-
-2. Click + Add new subscription.
-
-3. Format: Select PDF or PowerPoint from the "Format" dropdown.
-
-4. Frequency: Set the schedule (Daily, Weekly, or Monthly).
-
-5. Recipients: Add the email addresses of the people who should receive the report.
-
-6. Click Save and close.
-
-
----
-
 Step 5: Advanced Automation (Power Automate)
 
 
