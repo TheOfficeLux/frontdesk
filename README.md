@@ -40,6 +40,8 @@ Step 2: Publish to Power BI Service
 4. Once finished, click the link to open the report in the Power BI Service (web version).
 
 
+---
+
 Step 3: Advanced Automation (Power Automate)
 
 
@@ -63,6 +65,7 @@ To save the PDF to a folder (SharePoint/OneDrive) or send it via Teams, use a Po
 
 	- SharePoint: "Create file" to save the export to a document library.
 
+---
 
 Sample Power Automate Script Logic
 
